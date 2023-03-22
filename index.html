@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 90%;
+            margin:auto;
+        }
+        .row{
+            display:flex;
+            flex-wrap: wrap;
+        }
+        .col{
+         width:33%;
+         padding: 13px;
+        }
+        img{
+         width: 100%;
+         border-radius: 10px;
+        }
+        .col-card{
+         border-radius: 10px;
+         box-shadow: 0 0 20px 3px #ccc;
+        }
+        h2{
+         font-size:35px;
+         font-style: italic;
+         margin-left: 5px;
+        }
+        p{
+         font-size: 15px;
+         margin-left: 10px;
+        }
+        span{
+         text-align: center;
+         padding: 20px;
+         font-weight: 600;
+        }
+        i{
+         font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        let foodlist=[
+            {
+               id:1,
+               name:"Sethi Restaurant",
+               cusine:"North Indian",
+               place:"Pacific Mall, Tilak Nagar",
+               rating:4.0,
+               cost:300,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lmzauwqbdwo6zkjz7yna"
+            },
+            {
+               id:2,
+               name:"Brothers Bakers",
+               cusine:"Bakery, Fast Food",
+               place:"Vishnu Garden, Tilak Nagar",
+               rating:3.9,
+               cost:300,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ieksfbbsidxwy7ng9ts9"
+            },
+            {
+               id:3,
+               name:"Wraps",
+               cusine:"North Indian",
+               place:"Pacific Mall, Tilak Nagar",
+               rating:3.0,
+               cost:400,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f3a9b63a2252afbb87fae394b22571e5"
+            },
+            {
+               id:4,
+               name:"Full Night Chaap",
+               cusine:"Indian, Chinese",
+               place:"Csc A-1 Market, Paschim Vihar",
+               rating:4.5,
+               cost:600,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ljdgpd9jqzbuptfyfxnf"
+            },
+            {
+               id:5,
+               name:"Bikkgane Biryani",
+               cusine:"Biryani, Mughlai",
+               place:"Rajouri Garden, DDA Market",
+               rating:4.2,
+               cost:400,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fozknqbqlxkvj7chmi8k"
+            },
+            {
+               id:6,
+               name:"Burger Junction",
+               cusine:"American, Italian",
+               place:"Dividing Road, Rohini",
+               rating:3.0,
+               cost:400,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ird59ph0ualhztscs0e3"
+            },
+            {
+               id:7,
+               name:"Muradabadi Shahi Biryani ",
+               cusine:"Indian",
+               place:"Biryani, Hyderabadi",
+               rating:4.0,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lqtr8cauyemezakkxisz"
+            },
+            {
+               id:8,
+               name:"sethil Restaurant",
+               cusine:"Pizzas, Burgers",
+               place:"Tilak Nagar , Tilak Nagar",
+               rating:3.0,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lwudevxixaphs48uysyf"
+            },
+            {
+               id:9,
+               name:"Lambu Punjabi Dhaba",
+               cusine:" North Indian",
+               place:"A3rd Block, Paschim Vihar",
+               rating:4.5,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/iprabnkhnr7hnkhlrtqh"
+            },
+            {
+               id:10,
+               name:"Bikaner Desi Ghee Wala",
+               cusine:"North Indian, Chinese",
+               place:"Madipur Main Market, Punjabi Bagh",
+               rating:3.0,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/spxnxik0pdce2tg9wmkv"
+            },
+            {
+               id:11,
+               name:"Sethi Restaurant",
+               cusine:"North Indian",
+               place:"Pacific Mall, Tilak Nagar",
+               rating:4.0,
+               cost:300,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ljdgpd9jqzbuptfyfxnf"
+            },
+            {
+               id:12,
+               name:"Food of Dreams",
+               cusine:"North Indian, Chinese",
+               place:"DDA Market, Paschim Vihar",
+               rating:3.5,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xax24mb5ktl439uewghm"
+            },
+            {
+               id:13,
+               name:"Sher-E-Punjab Dhaba",
+               cusine:"North Indian, Mughlai",
+               place:"Raghubir Nagar, Rajouri Garden",
+               rating:4.2,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ird59ph0ualhztscs0e3"
+            },
+            {
+               id:14,
+               name:"Short Crust: Cakes & More",
+               cusine:"Bakery, Desserts",
+               place:"Pacific Mall, Tilak Nagar",
+               rating:3.0,
+               cost:400,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/upaw1gsbys8fb2lei8uu"
+            },
+            {
+               id:15,
+               name:"Kaleva Restaurant",
+               cusine:"Sweets, Street Food",
+               place:"Tehsil, Paschim Vihar",
+               rating:4.2,
+               cost:500,
+               imgUrl:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/mogj9bpjcqmxfipkobzv"
+            }
+        ]
+        let cont=document.querySelector(".container");
+        let cards=document.createElement("div");
+        cards.classList.add("row");
+        cont.appendChild(cards);
+        
+            foodlist.forEach(function(e){
+               let div=document.createElement("div");
+        div.classList.add("col");
+        cards.appendChild(div)
+
+        let div2=document.createElement("div");
+        div2.classList.add("col-card");
+        div.appendChild(div2)
+
+        let img=document.createElement("img");
+         img.src=e.imgUrl;
+        div2.appendChild(img)
+
+        let head=document.createElement("h2");
+        head.innerHTML=e.name;
+        div2.appendChild(head);
+
+        let para=document.createElement("p");
+        para.innerHTML=e.cusine;
+        div2.appendChild(para);
+
+        let place=document.createElement("p");
+        place.innerHTML=e.place;
+        div2.appendChild(place);
+
+        let rating=document.createElement("span");
+        rating.innerHTML=e.rating;
+        div2.appendChild(rating);
+
+        let cost=document.createElement("i");
+        cost.innerHTML=e.cost;
+        div2.appendChild(cost);
+        
+            })
+        
+        console.log(cont)
+     </script>
+</body>
+</html>
